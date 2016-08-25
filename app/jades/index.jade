@@ -1,0 +1,29 @@
+doctype html
+html
+  head
+    title indexOfpug
+    meta(charset='utf-8')
+    // build:css styles/main.css
+    link(rel='stylesheet', href='styles/main.css')
+    // endbuild
+
+  body
+    h2 学习pug
+
+    script(src='bundles/export-bundle.js')
+    // build:js scripts/vendor.js
+    // bower:js
+    script(src='/bower_components/modernizr/modernizr.js')
+    script(src='/bower_components/jquery/dist/jquery.js')
+    // endbower
+    // endbuild
+
+    // build:js scripts/main.js
+    script(src="scripts/main.js")
+    // endbuild
+    script.
+      $(function(){
+        var index = new Index(1,2);
+        console.log(index.toString());
+        console.log(require('export')());
+      })
